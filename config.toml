@@ -1,0 +1,55 @@
+baseURL = "https://bigdataethics.github.io/"
+languageCode = "en-us"
+title = "Big Data Ethics"
+theme = "hugo-geo"
+themesdir = "./themes/"
+relativeURLs = false
+disqusShortname = "joecoelhosj-github-io"
+paginate = 5
+
+[taxonomies]
+	tag = "tags"
+	blog = "posts"
+	tutorial = "tutorials"
+
+[params]
+	showglobe = false
+
+	favicon = "favicon.ico"
+	
+	analytics = ""
+
+	email = "joseph.coelho@marquette.edu"
+
+	profilepic = "img/profile.png"
+	
+	title = "BIGDATA ETHICS"
+	subtitle = "Joe Coelho"
+
+	# Social buttons for sidebar
+	# Each of these are optional
+	
+	# [[params.socialbuttons]]
+	# faicon = "github"
+	# url = "https://github.com/bigdataethics"
+	[[params.socialbuttons]]
+	faicon = "twitter"
+	url = "https://twitter.com/joebencoelho"
+	[[params.socialbuttons]]
+	faicon = "linkedin"
+	url = "https://www.linkedin.com/in/joecoelhosj/"
+	[[params.socialbuttons]]
+	faicon = "google-plus"
+	url = "https://plus.google.com/+JosephCoelhoSJ"
+
+	[[params.navlinks]]
+	name = "About"
+	url = "about"
+	
+	[[params.navlinks]]
+	name = "Blog"
+	url = "poss/"
+	
+	[[params.navlinks]]
+	name = "Tutorials"
+	url = "tutorials/"
