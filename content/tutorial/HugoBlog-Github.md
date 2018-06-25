@@ -43,9 +43,9 @@ hugo new site <BLOG>
 * Change directory to \<BLOG\> directory
 * Edit the config.toml file so that
 ```
-		baseurl = "https://\<USERNAME\>.github.io/"
-    theme = "hugo-geo"
-    themesdir = "./themes/"
+baseurl = "https://\<USERNAME\>.github.io/"
+theme = "hugo-geo"
+themesdir = "./themes/"
 ```
 * Edit other parameters as necessary
 * Initialize the folder for Git use
@@ -66,7 +66,6 @@ echo "public/" > .gitignore
 ```
 
 * Clone a theme for the blog. (I am using the hugo-geo theme for this example)
-
 ```
 git clone https://github.com/alexurquhart/hugo-geo.git themes\hugo-geo
 ```
@@ -93,15 +92,11 @@ git submodule add <HTTPS clone-link> public
 
 ### Step 4: Creating Posts or Tutorials
 
-* You can call Hugo to create blank posts or tutorials which can then be edited
+* You can use Hugo to create blank posts or tutorials which can then be edited
 ```
 hugo new post/\<filename\>.md
-```
-
-```
 hugo new tutorial/\<filename\>.md
 ```
-
 The files will be created in the 'post' / 'tutorial' folders within the 'content' folder.
 
 ### Step 5: Rendering the Pages and Updating Github repositories.
