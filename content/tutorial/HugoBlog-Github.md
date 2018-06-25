@@ -12,17 +12,18 @@ Github is a popular free static hosting service for personal and project pages. 
 
 The Hugo website also has instructions for creating a personal website on Github. Instructions can be got here https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
-### Step by Step
+### Step by Step: Download Resources and Setup Directories
 	
 * Download and intall Git (https://gitforwindows.org/)
 
 * Sign up for a Github account
-* Create a <BLOG> repository on Github. This repository will contain Hugo's content and other source files.
-* Create a <USERNAME>.github.io repository. This repository will hold the fully rendered version of the Hugo website.
+* Create a \<BLOG\> repository on Github. This repository will contain Hugo's content and other source files.
+* Create a \<USERNAME\>.github.io repository. This repository will hold the fully rendered version of the Hugo website.
 * Instructions for downloading and installing Hugo can be found at https://gohugo.io/getting-started/installing/#windows
 	
 Directory Structure:
 
+```
 \Hugo
   |
   |--- bin (contains the Hugo executable)
@@ -31,16 +32,37 @@ Directory Structure:
          	    |--- themes (contains the theme folder)
          	    |--- public (the rendered version of the blog)
 
-
+```
 * (at the command prompt, change directory 'Sites')
-* Give the following commands:
+* Give the following command:
 ```
-		hugo new site <BLOG>
+hugo new site <BLOG>
 ```
 
-* Change directory to <BLOG> directory
+* Change directory to \<BLOG\> directory
 * Edit the config.toml file so that
-		baseurl = "https://<USERNAME>.github.io/"
+		baseurl = "https://\<USERNAME\>.github.io/"
 * Edit other parameters as necessary
+
+### Step by Step: Download Theme and Clone Repositories
+
+* Clone a theme for the blog. (I am using the hugo-geo theme for this example)
+
+```
+git clone https://github.com/alexurquhart/hugo-geo.git .\themes\hugo-geo
+```
+
+* In the \<BLOG\>/content folder create a file named about.md with the following content:
+    +++
+    date = "2018-06-17T08:00:00-06:00"
+    draft = false
+    title = "About"
+    +++
+    # Welcome
+    Welcome to this test site.
+
+* Map the \<USERNAME\>
+
+
 
 
