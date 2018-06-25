@@ -93,15 +93,18 @@ git submodule add <HTTPS clone-link> public
 ### Step 4: Creating Posts or Tutorials
 
 * You can use Hugo to create blank posts or tutorials which can then be edited
+
 ```
 hugo new post/\<filename\>.md
 hugo new tutorial/\<filename\>.md
 ```
+
 The files will be created in the 'post' / 'tutorial' folders within the 'content' folder.
 
 ### Step 5: Rendering the Pages and Updating Github repositories.
 
 * The following commands may be saved in a batch file (.BAT) and run every time new posts have been written. (This batch file is to be saved in the 'Hugo\Sites' directory.)
+
 ```
 cd <BLOG>
 git add .
