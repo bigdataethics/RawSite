@@ -93,31 +93,27 @@ git submodule add <HTTPS clone-link> public
 
 ### Step 4: Creating Posts or Tutorials
 
-* You can use Hugo to create blank posts or tutorials which can then be edited. Example, to create a new post with filename 'FirstPost.md'
-```
-hugo new post/FirstPost.md
-```
-And to create a tutorial file with filename 'FirstTutorial.md'
-```
-hugo new tutorial/FirstTutorial.md
-```
+* You can use Hugo to create blank posts or tutorials which can then be edited. Example, to create a new post with filename 'FirstPost.md':
+    hugo new post/FirstPost.md
+And to create a tutorial file with filename 'FirstTutorial.md':
+    hugo new tutorial/FirstTutorial.md
 The files will be created in the 'post' or 'tutorial' folders within the 'content' folder.
 
 ### Step 5: Rendering the Pages and Updating Github repositories.
 
 * The following commands may be saved in a batch file (.BAT) and run every time new posts have been written. (This batch file is to be saved in the 'Hugo\Sites' directory.)
-```
-cd <BLOG>
-git add .
-git commit -m "Update blog"
-git push -u origin master
-hugo
-cd public
-git add .
-git commit -m "Update rendered site"
-git push -u origin master
-cd ..
-```
+
+    cd <BLOG>
+    git add .
+    git commit -m "Update blog"
+    git push -u origin master
+    hugo
+    cd public
+    git add .
+    git commit -m "Update rendered site"
+    git push -u origin master
+    cd ..
+
 
 If you encounter errors especially when pushing content first time, change the flag for the 'git push' commands from -u to -f which will force a push. You should not have a problem unless the files have been modified in the Github repository directly online, in which case you will have to use the 'git pull' command to update the files stored locally.
 
