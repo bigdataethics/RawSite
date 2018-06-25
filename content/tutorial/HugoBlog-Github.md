@@ -60,6 +60,11 @@ git init
 git remote add origin <HTTPS BLOG clone-link>
 ```
 
+* Mark the 'public' folder as not to be updated in the <BLOG> repository by giving the following command at the prompt.
+```
+echo "public/" > .gitignore
+```
+
 * Clone a theme for the blog. (I am using the hugo-geo theme for this example)
 
 ```
