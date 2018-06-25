@@ -89,7 +89,6 @@ git submodule add <HTTPS clone-link> public
 ### Step 4: Creating Posts or Tutorials
 
 * You can call Hugo to create blank posts or tutorials which can then be edited
-
 ```
 hugo new post/\<filename\>.md
 ```
