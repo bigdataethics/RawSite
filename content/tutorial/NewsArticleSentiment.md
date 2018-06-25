@@ -17,24 +17,6 @@ hello
 ### Getting a News Article
 We have already seen how tweets can be collected. In this example we will work with news articles. BeautifulSoup and Scrapy are two popular Python packages for scraping news web-sites and getting links to articles. Another popular Python package that helps collect news articles is 'news-please'.
 
-
-
-
-### Sentiment Analysis
-
-
-
-
-```
-hello
-```
-
-
-
-##### Sample Code to analyze news article sentiment
-
-# Example: get a news article from a website and check its sentiment
-
 ## Step 1: get the news article (in this case we are providing the url for the news article). 
 
 ### Websites can be scraped for news article links and those can be used for the actual analysis.
