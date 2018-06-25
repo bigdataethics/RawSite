@@ -10,15 +10,16 @@ tag: "tutorial"
 
 Github is a popular free static hosting service for personal and project pages. Hugo is a framework for building websites. More information about Hugo can be got at https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
-The Hugo website also has instructions for creating a personal website on Github. Instructions can be got here https://gohugo.io/hosting-and-deployment/hosting-on-github/
+The Hugo website also has instructions for creating a personal website on Github. Instructions can be got at https://gohugo.io/hosting-and-deployment/hosting-on-github/
 
 ### Step 1: Download Resources and Setup Directories
 	
 * Download and intall Git (https://gitforwindows.org/)
 
-* Sign up for a Github account
+* Sign up for a Github account at www.github.com
 * Create a \<BLOG\> repository on Github. This repository will contain Hugo's content and other source files.
-* Create a \<USERNAME\>.github.io repository. This repository will hold the fully rendered version of the Hugo website.
+* Create a \<USERNAME\>.github.io repository. This repository will hold the fully rendered version of the Hugo website. The <USERNAME> should be the same username you used to create the Github account.
+* Substitute \<BLOG\> and \<USERNAME\> with proper literals in all the commands.
 * Instructions for downloading and installing Hugo can be found at https://gohugo.io/getting-started/installing/#windows
 	
 Directory Structure:
@@ -33,17 +34,19 @@ Directory Structure:
          	    |--- public (the rendered version of the blog)
 
 ```
-* (at the command prompt, change directory 'Sites')
-* Give the following command:
+* (at the command prompt, change directory to 'Sites')
+* Give the following command to create a new site:
 ```
 hugo new site <BLOG>
 ```
 
 * Change directory to \<BLOG\> directory
 * Edit the config.toml file so that
+```
 		baseurl = "https://\<USERNAME\>.github.io/"
     theme = "hugo-geo"
     themesdir = "./themes/"
+```
 * Edit other parameters as necessary
 * Initialize the folder for Git use
 ```
@@ -52,7 +55,7 @@ git init
 
 ### Step 2: Download Theme and Clone Repositories
 
-* Set the \<BLOG\> repository as origin. (The BLOG clone-link is generally https://github.com/<USERNAME>/<BLOG>.git)
+* Set the \<BLOG\> repository as origin. (The BLOG clone-link is generally https://github.com/\<USERNAME\>/\<BLOG\>.git)
 ```
 git remote add origin <HTTPS BLOG clone-link>
 ```
@@ -64,6 +67,7 @@ git clone https://github.com/alexurquhart/hugo-geo.git themes\hugo-geo
 ```
 
 * In the \<BLOG\>/content folder create a file named about.md with the following content:
+```
     +++
     date = "2018-06-17T08:00:00-06:00"
     draft = false
@@ -71,8 +75,9 @@ git clone https://github.com/alexurquhart/hugo-geo.git themes\hugo-geo
     +++
     # Welcome
     Welcome to this test site.
+```
 
-* Map the \<USERNAME\>.github.io repository to the 'public' folder which contains the rendered pages. The clone-link will be https://github.com/\<USERNAME\>/\<USERNAME\>.github.io.git
+* Map the \<USERNAME\>.github.io repository to the 'public' folder which contains the rendered pages. The clone-link will be https://github.com/ \<USERNAME\>/ \<USERNAME\>.github.io.git
 ```
 git submodule add <HTTPS clone-link> public
 ```
@@ -86,11 +91,12 @@ git submodule add <HTTPS clone-link> public
 * You can call Hugo to create blank posts or tutorials which can then be edited
 ```
 hugo new post/<filename>.md
-
 ```
+
 ```
 hugo new tutorial/<filename>.md
 ```
+
 The files will be created in the 'post' / 'tutorial' folders within the 'content' folder.
 
 ### Step 5: Rendering the Pages and Updating Github repositories.
