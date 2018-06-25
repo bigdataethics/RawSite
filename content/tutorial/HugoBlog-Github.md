@@ -20,7 +20,8 @@ The Hugo website also has instructions for creating a personal website on Github
 * Create a \<BLOG\> repository on Github. This repository will contain Hugo's content and other source files.
 * Create a \<USERNAME\>.github.io repository. This repository will hold the fully rendered version of the Hugo website. The <USERNAME> should be the same username you used to create the Github account.
 * Substitute \<BLOG\> and \<USERNAME\> with proper literals in all the commands.
-* Instructions for downloading and installing Hugo can be found at https://gohugo.io/getting-started/installing/#windows
+* Download Hugo. Instructions for downloading and installing Hugo can be found at https://gohugo.io/getting-started/installing/#windows
+* Add the 'Hugo\bin' folder to the PATH.
 	
 Directory Structure:
 
@@ -60,12 +61,12 @@ git init
 git remote add origin <HTTPS BLOG clone-link>
 ```
 
-* Mark the 'public' folder as not to be updated in the <BLOG> repository by giving the following command at the prompt.
+* Mark the 'public' folder as not to be updated in the <BLOG> repository by giving the following command at the prompt which will add the 'public' folder to the .gitignore file.
 ```
 echo "public/" > .gitignore
 ```
 
-* Clone a theme for the blog. (I am using the hugo-geo theme for this example)
+* Clone a theme for the blog. (I am using the hugo-geo theme for this example). This command will clone the hugo-geo theme into the 'themes\hugo-geo' folder.
 ```
 git clone https://github.com/alexurquhart/hugo-geo.git themes\hugo-geo
 ```
@@ -92,12 +93,15 @@ git submodule add <HTTPS clone-link> public
 
 ### Step 4: Creating Posts or Tutorials
 
-* You can use Hugo to create blank posts or tutorials which can then be edited
+* You can use Hugo to create blank posts or tutorials which can then be edited. Example, to create a new post with filename 'FirstPost.md'
 ```
-hugo new post/\<filename\>.md
-hugo new tutorial/\<filename\>.md
+hugo new post/FirstPost.md
 ```
-The files will be created in the 'post' / 'tutorial' folders within the 'content' folder.
+And to create a tutorial file with filename 'FirstTutorial.md'
+```
+hugo new tutorial/FirstTutorial.md
+```
+The files will be created in the 'post' or 'tutorial' folders within the 'content' folder.
 
 ### Step 5: Rendering the Pages and Updating Github repositories.
 
@@ -107,7 +111,7 @@ cd <BLOG>
 git add .
 git commit -m "Update blog"
 git push -u origin master
-..\bin\hugo
+hugo
 cd public
 git add .
 git commit -m "Update rendered site"
