@@ -100,8 +100,9 @@ The files will be created in the 'post' or 'tutorial' folders within the 'conten
 
 ### Step 5: Rendering the Pages and Updating Github repositories.
 
-* The following commands may be saved in a batch file (.BAT) and run every time new posts have been written. This batch file is to be saved in the 'Hugo\Sites' directory.
-```bat
+* The following commands may be saved in a batch file (.BAT) and run every time new content have been added. This batch file is to be saved in the 'Hugo\Sites' directory and run from there. The first three `git` commands updates the \<BLOG\> repository. The `hugo` command renders the blog into the 'public' folder. The last three `git` commands updates the \<USERNAME\> repository which contains the rendered content.
+
+```
 cd <BLOG>
 git add .
 git commit -m "Update blog"
