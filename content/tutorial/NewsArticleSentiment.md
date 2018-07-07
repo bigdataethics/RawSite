@@ -6,7 +6,7 @@ draft: false
 index: true
 tag: "tutorials"
 ---
-### Sentiment Analysis
+## Sentiment Analysis
 Identifying the sentiment of a news article or tweet can be useful in many ways. For example, sentiment of news about stock or the economy or sentiment of tweets of a user regarding the stock market might correlate to movements in the stock market. These in turn can be used for personalizing recommendations or for predicting market sentiment. In this brief tutorial we will look at how news article sentiment can be guaged.
 
 ### Python Packages:
@@ -20,14 +20,14 @@ news-please
 ### Getting a News Article
 We have already seen in another tutorial how tweets can be collected. In this example we will work with news articles. BeautifulSoup and Scrapy are two popular Python packages for scraping news web-sites and getting links to articles. Another popular Python package that helps collect news articles is 'news-please'.
 
-## Step 1: get the news article (in this case we are providing the url for the news article). 
+### Step 1: get the news article (in this case we are providing the url for the news article). 
 
 ```python
 import newsplease
 article = newsplease.NewsPlease.from_url('http://money.cnn.com/2018/07/03/news/companies/fiat-us-sales-future/index.html?iid=SF_LN')
 ```
 
-### Print some attributes of the "article".
+#### Print some attributes of the "article".
 The article title.
 ```python
 # Print the title of the article
@@ -87,9 +87,9 @@ print(article.description)
     Fiat's US sales are down 44% so far this year and many question how long Fiat Chrysler will keep brand in the US.
 ```
 
-## Step 2: Identifying the sentiment of the news article
+### Step 2: Identifying the sentiment of the news article
 
-### We will first find the sentiment of the article using the Python package textblob. The 'sentiment' call returns two values: polarity in the range -1 to +1, and subjectivity in the range 0 to 1. Polarity value -1 indicates 'negative', 0 indicates 'neutral', +1 indicates 'positive' sentiment. Subjectivity value 0 indicates 'objective', 1 indicates 'subjective'.
+#### We will first find the sentiment of the article using the Python package textblob. The 'sentiment' call returns two values: polarity in the range -1 to +1, and subjectivity in the range 0 to 1. Polarity value -1 indicates 'negative', 0 indicates 'neutral', +1 indicates 'positive' sentiment. Subjectivity value 0 indicates 'objective', 1 indicates 'subjective'.
 
 ```python
 from textblob import TextBlob
@@ -101,21 +101,23 @@ print(article.sentiment)
 ```
 The above output indicates that the article is close to 'neutral' in sentiment. But is that true? Let find the sentiment using another approach.
 
-### We will use the LoughranMcDonald word library (https://sraf.nd.edu/textual-analysis/resources/#LM%20Sentiment%20Word%20Lists) to identify positive and negative words and then score the article. The LoughranMcDonald word library is a list of words tagged as 'positive', 'negative', 'uncertainty', 'litigious', 'modal', or 'constraining'. 
+#### We will use the LoughranMcDonald word library (https://sraf.nd.edu/textual-analysis/resources/#LM%20Sentiment%20Word%20Lists) to identify positive and negative words and then score the article. The LoughranMcDonald word library is a list of words tagged as 'positive', 'negative', 'uncertainty', 'litigious', 'modal', or 'constraining'. 
 
-### The two LoughranMcDonald word library source files are avalable at:
+#### The two LoughranMcDonald word library source files are avalable at:
+
 GenericLong StopWords: https://drive.google.com/file/d/0B4niqV00F3msSktONVhfaElXeEk/view?usp=sharing
+
 Master Dictionary: https://drive.google.com/file/d/0B4niqV00F3msaFZGUEZNTGtBblU/view?usp=sharing
 
 
-### A simple sentiment analzer can be constructed as follows:
+#### A simple sentiment analzer can be constructed as follows:
 1. Collect all 'positive' words and all 'negative' words from the main word library into two separate lists.
 2. Count how many words of the article/tweet are found in the 'positive' list and in the 'negative' list.
 3. If the count of 'positive' words is greater than the 'negative' words, the sentiment is 'positive'. If the count of 'negative' words is greater than the 'positive' words, the sentiment is 'negative'.
 4. Before the article/tweet is analzed, it might be good to clean it of punctuations, stopwords, etc.
 
 
-### Tokenize the words in the text and convert all words to lowercase. Load the stopwords and remove stopwords from the article text.
+#### Tokenize the words in the text and convert all words to lowercase. Load the stopwords and remove stopwords from the article text.
 
 ```python
 import pandas as pd
@@ -167,7 +169,7 @@ print (words_new)
     ['america', 'buy', 'fiat', '.', 'fiat', "'", 'sales', '44', '%', 'year', '.', 'brand', 'sold', 'cars', '2018', 'months', '2014', ',', 'fiat', "'", 'recent', 'high', '-', 'water', 'mark', '.', 'americans', 'bought', 'alfa', 'romeos', 'fiats', 'year', '.', '"', 'sales', 'brand', ',"', 'rebecca', 'lindland', ',', 'analyst', 'cox', 'automotive', '.', 'company', 'sells', 'models', 'america', ':', 'fiat', '500', ',', '500l', '500x', ',', 'vehicles', ',', 'spider', '.', 'subcompact', 'cars', ',', 'falling', 'favor', 'american', 'customers', '.', 'sales', 'fall', ',', 'fiat', 'chrysler', '(', 'fcau', ')', 'pulled', 'spending', 'small', 'car', 'brand', '.', 'company', 'made', 'clear', 'emphasize', 'trucks', 'suvs', 'sedans', 'forward', '.', 'fiat', ',', 'dodge', 'chrysler', 'brands', 'collectively', 'slated', 'receive', '25', '%', 'company', "'", 'investment', 'spending', '--', 'lion', "'", 'share', 'ram', 'jeep', '.', 'related', ':', 'things', 'don', "'", 'good', 'dodge', 'chrysler', '"', 'making', 'money', 'cars', ',', 'small', ',', 'cheap', 'cars', ',"', 'michelle', 'krebs', ',', 'analyst', 'autotrader', '.', 'fiat', 'face', 'additional', 'hurdle', ':', 'trump', 'administration', "'", 'threat', 'impose', 'tariffs', 'imported', 'cars', ',', 'europe', '.', 'significantly', 'raise', 'price', 'fiats', '--', 'potentially', 'final', 'straw', 'automaker', 'moving', 'direction', '.', 'related', ':', '-', 'made', 'car', 'import', '.', "'", 'bad', 'news', 'automakers', 'fiat', 'rescued', 'chrysler', 'bankruptcy', '2009', '.', 'italian', 'brand', 'returned', 'market', 'years', ',', '-', 'decade', 'absence', '.', 'brand', 'united', 'states', '.', ',', 'demand', 'commitment', 'company', ',', 'dealers', 'don', "'", 'continue', 'giving', 'resources', 'floor', 'space', 'selling', 'fiats', '.', '"', "'", 'demand', 'cars', "'", 'profit', ',', 'dealers', ',"', 'krebs', '.', 'dealers', 'paid', 'dealership', 'rights', ',', 'made', 'investments', 'sell', 'brand', '.', 'company', "'", 'decision', 'kill', 'fiat', 'brand', 'united', 'states', 'dealership', 'math', '.', '"', 'depend', 'buy', ',"', 'lindland', '.', '"', "'", 'sitting', 'dealer', ',', "'", 'll', 'sort', 'reparations', '."', '13', 'american', 'dealerships', 'sell', 'fiat', 'fiat', 'chrysler', 'brand', '.', 'fiat', "'", '400', 'dealerships', 'sell', 'chryslers', ',', 'dodges', ',', 'jeeps', 'rams', '.', '100', 'sell', 'alfa', 'romeos', '.']
 ```    
 
-### Load the LoughranMcDonald master word list into a pandas dataframe. The dataframe has the following columns: 
+#### Load the LoughranMcDonald master word list into a pandas dataframe. The dataframe has the following columns: 
 Word, Sequence Number, Word Count, Word Proportion, Average Proportion, Std Dev, Doc Count, Negative, Positive,    Uncertainty, Litigious, Constraining, Superfluous, Interesting, Modal, Irr_Verb, Harvard_IV, Syllables, Source.
 
 We will collect words whose  'Positive' or 'Negative' values are greater than 0 into two separate lists and convert words in those lists into lowercase.
@@ -186,7 +188,7 @@ pos_words = [word.lower() for word in pos_words]
 neg_words = [word.lower() for word in neg_words]
 ```
 
-### Retain only the 'positive' words and 'negative' words from the article text and print the count of each.
+#### Retain only the 'positive' words and 'negative' words from the article text and print the count of each.
 ```python
 words_new_pos = [word for word in words_new if word in pos_words]
 words_new_neg = [word for word in words_new if word in neg_words]
@@ -198,5 +200,5 @@ print("Positive Score: ",len(words_new_pos),"Negative Score: ",len(words_new_neg
 ```    
 The above scores indicate that the article has a negative sentiment.
 
-### Improving the sentiment analyzer.
+#### Improving the sentiment analyzer.
 The above method counts the number of positive words and negative words in the article and uses the difference in counts to indicate sentiment. The method can be improved by taking into account other collections (like constraining or uncertainity) in the master word list. Another improvement could give higher weight to 'positive' or 'negative' words that occur in the first section of the article.
