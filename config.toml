@@ -11,6 +11,7 @@ paginate = 5
 	tag = "tags"
 	blog = "post"
 	tutorial = "tutorial"
+	jesuitica = "jesuitica"
 
 [params]
 	showglobe = false
@@ -53,3 +54,7 @@ paginate = 5
 	[[params.navlinks]]
 	name = "Tutorials"
 	url = "tutorial/"
+
+	[[params.navlinks]]
+	name = "Jesuitica"
+	url = "jesuitica/"
