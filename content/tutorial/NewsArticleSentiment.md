@@ -4,7 +4,7 @@ description: "Sentiment Analysis in Python"
 date: 2018-06-15T23:38:36-05:00
 draft: false
 index: true
-tag: "tutorials"
+tag: "tutorial"
 ---
 ## Sentiment Analysis
 Identifying the sentiment of a news article or tweet can be useful in many ways. For example, sentiment of news about stock or the economy or sentiment of tweets of a user regarding the stock market might correlate to movements in the stock market. These in turn can be used for personalizing recommendations or for predicting market sentiment. In this brief tutorial we will look at how news article sentiment can be guaged.

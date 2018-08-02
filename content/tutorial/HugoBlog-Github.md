@@ -1,5 +1,6 @@
 ---
 title: "Blog using Hugo on Github"
+description: "Creating a Blog using Hugo framework"
 date: 2018-06-24T16:59:11-05:00
 draft: false
 index: true

@@ -3,7 +3,7 @@ title: "Collecting Streaming Twitter Data"
 date: 2017-10-28T09:15:27-05:00
 draft: false
 index: true
-tag: "tutorials"
+tag: "tutorial"
 ---
 
 Twitter no longer provides free access to all streaming tweets (Twitter Firehose). However, it does allow access to "some" streaming tweets in real time based on filters. In the code below all tweets having 'Las Vegas' in them will be filtered. [More: http://tweepy.readthedocs.io/en/v3.5.0/streaming_how_to.html]

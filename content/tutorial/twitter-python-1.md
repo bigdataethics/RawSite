@@ -4,7 +4,7 @@ description: "Accessing Twitter data in Python"
 date: 2017-10-27T23:38:36-05:00
 draft: false
 index: true
-tag: "tutorials"
+tag: "tutorial"
 ---
 ### Social Media Analysis
 Social media has become the go-to place for information and opinions. Social media can be mined to gauge sentiment, analyze opinion, identity interests, locate concerns, and so on. Facebook, Pinterest, Instagram, Twitter, Google+ are some social media platforms. Among them, Twitter data is public and can be mined relatively easily.

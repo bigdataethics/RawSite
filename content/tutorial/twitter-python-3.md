@@ -3,7 +3,7 @@ title: "Handling data in JSON and CSV formats"
 date: 2017-10-28T09:16:42-05:00
 draft: false
 index: true
-tag: "tutorials"
+tag: "tutorial"
 ---
 
 Python includes packages for handling data in JSON and CSV formats. JSON stands for JavaScript Object Notation format. It is basically a key-value pair store. CSV stands for Comma Separated Variables. It is a list of data values separated by comma (or some other delimiter).
