@@ -18,7 +18,7 @@ Data is called the new "black gold" and is being monetized through different ave
 
 [Conference on Web and Social Media -- Dataset Sharing Service](https://www.icwsm.org/2015/datasets/datasets/)
 
-#### Data Repositories
+#### Other Data Repositories
 
 [UC Irvine Data Repository](https://archive.ics.uci.edu/ml/index.php)
 
