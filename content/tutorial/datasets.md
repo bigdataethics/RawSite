@@ -1,10 +1,10 @@
 +++
-title: "Dataset Repository List"
-description: "List of Dataset Repositories"
-date: 2018-08-21T10:00:00-05:00
-draft: false
-index: true
-tag: "tutorial"
+title = "Dataset Repository List"
+description = "List of Dataset Repositories"
+date = 2018-08-21T10:00:00-05:00
+draft = false
+index = true
+tag = "tutorial"
 
 +++
 
