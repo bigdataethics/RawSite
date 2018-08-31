@@ -2,7 +2,7 @@
 title: "IEEE BigData Congress 2018"
 date: 2018-07-31T11:25:55-05:00
 draft: false
-tag: "posts"
+tag: "post"
 ---
 
 The **IEEE 2018 World Congress** on Services held in San Francisco, CA during 2-7 July was a jamboree of sorts. It included the **BigData** Congress as well as Cloud, Edge, ICCC (Cognitive Computing), ICIOT (Internet of Things), ICWS (Web Services) and SCC (Services Computing) parallel sessions. I was privileged to present a work-in-progress paper related to personalization of travel recommendations using social media analysis in one of the BigData sessions. The basic concept of the recommendation system is to mine a user's social media content (like twitter feed) and use that data to predict the user's places of interest categories (like museum, parks, restaurants, buildings, etc.) in the travel domain. This personalized places of interest recommendation would provide the user with a list of locations they might want to visit in a given city or place.

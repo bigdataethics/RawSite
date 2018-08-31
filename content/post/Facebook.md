@@ -2,7 +2,7 @@
 title: "Privacy in a Connected World"
 date: 2018-03-28T09:29:21-05:00
 draft: false
-tag: "posts"
+tag: "post"
 ---
 
 Facebook is in the news for all the wrong reasons these days<sup id="a1">[1](#f1)</sup>. And at the center of their troubles is the often discussed issue of privacy. Digital technology has evolved from being merely computing machines to connected machines. First it was the Intranet that connected computers togethers in a local space. Then came the Internet bringing with it global connectivity. Communication became easier, faster and more convenient. Benefits of this new technology began to flow from the workspace to the personal space of individuals. A new way of communicating began to emerge. Social media platforms began to take shape. And people embraced it with joy. Today's Internet of Things (IoT) is taking this connectedness to a whole new level!
