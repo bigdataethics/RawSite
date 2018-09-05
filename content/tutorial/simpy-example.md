@@ -229,6 +229,13 @@ Average time until order is serviced: 65.0 seconds.
 
 To obtain meaningful results any simulation has to be run multiple times. On running the above program ten times, the following results were obtained. *(all times in seconds)*
 
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+
 |       | payment_wait_time | payment_time | order_wait_time | order_time |
 | :---: | ----------------: | -----------: | --------------: | ---------: |
 | **0** |              5.90 |        25.85 |           15.45 |      79.85 |
@@ -241,8 +248,6 @@ To obtain meaningful results any simulation has to be run multiple times. On run
 | **7** |             18.30 |        38.15 |           17.20 |      85.65 |
 | **8** |              4.35 |        24.60 |            1.50 |      57.25 |
 | **9** |              4.05 |        21.75 |            8.55 |      64.95 |
-
-
 
 <u>The averages of the above 10 runs are as follows:</u>
 
