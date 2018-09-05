@@ -242,6 +242,8 @@ To obtain meaningful results any simulation has to be run multiple times. On run
 | **8** |              4.35 |        24.60 |            1.50 |      57.25 |
 | **9** |              4.05 |        21.75 |            8.55 |      64.95 |
 
+
+
 <u>The averages of the above 10 runs are as follows:</u>
 
 - payment_wait_time = 6.75 seconds
@@ -249,14 +251,14 @@ To obtain meaningful results any simulation has to be run multiple times. On run
 - order_wait_time = 9.93 seconds
 - order_time = 68.73 seconds
 
-Repeating the entire above process with one additional barista (NO_OF_BARISTAS = 4) would result in the following times. As expected, there will be a shorter wait time for the order.
+Repeating the entire above process with one additional barista (NO_OF_BARISTAS = 4) resulted in the following average times. As expected, there is a shorter wait time for the order.
 
 - payment_wait_time =4.43 seconds
 - payment_time = 23.14 seconds
 - order_wait_time = 1.26 seconds
 - order_time = 58.89 seconds
 
-The above code can be re-run with different values for NO_OF_CASHIERS and NO_OF_BARISTAS to see its impact on wait times. If the number of customers is increased, a suitable increase should be made in the simulation run time (`env.run(until=xxx)` where *xxx* is the time in seconds) .
+The above code can be re-run with different values for NO_OF_CASHIERS and NO_OF_BARISTAS to see its impact on wait times. If the number of customers is increased, a suitable increase should also be made in the simulation run time (`env.run(until=xxx)` where *xxx* is the time in seconds) .
 
 In the next tutorial we will explore other distributions from which we can sample random customer generation. We will also look at how we can plot the time taken for payments and order processing. 
 
