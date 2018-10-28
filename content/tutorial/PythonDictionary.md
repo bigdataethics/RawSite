@@ -12,7 +12,7 @@ date = "2018-10-26T10:00:00"
 
 +++
 
-Python provides a powerful natural language processing toolkit for handling text files. The toolkit has functions for operations like tokenizing as well as parts-of-speech identification, n-gramming, etc. In addition it contains a corpora of useful datasets like 'stopwords', 'synonyms', etc.
+Python provides a powerful natural language processing toolkit for handling textual data. The toolkit has functions for operations like tokenizing as well as parts-of-speech identification, n-gramming, etc. In addition it contains a corpora of useful datasets like 'stopwords', 'synonyms', etc.
 
 #### Natural Language ToolKit (NLTK)
 
@@ -35,7 +35,7 @@ Apart from NLTK, there are other toolkits like TextBlob, StandfordNLP, spaCy, et
 
 One of the basic operations to do with text is **tokenizing**. And two kinds of tokenizing are: sentence tokenizing and word tokenizing. Sentence tokenizing refers to splitting a paragraph into sentences; while word tokenizing refers to splitting a paragraph into words.
 
-The paragraph shown below is taken from the link: [I tried a #NoSpendChallenge for a month](https://www.bbc.co.uk/bbcthree/article/d0438e75-f9fc-4a85-a5b4-ce3cc040e33d) (You will want to change the smart quotes to regular quotes.)
+The paragraph shown below is taken from the link: [I tried a #NoSpendChallenge for a month](https://www.bbc.co.uk/bbcthree/article/d0438e75-f9fc-4a85-a5b4-ce3cc040e33d) (*Note: You will want to change the smart quotes to regular quotes*.)
 
 ```python
 paragraph = "It's official: I'm a financial ostrich. Every month, I run out of money \
@@ -69,7 +69,7 @@ What is the difference between using `.split()` and using `word_tokenize`or `Wor
 
 Another basic operation on text is **n-gramming**, that is creating a list of tuples of n-words of the text, where n can be 'bi' (2), or 'tri' (3), or any other number. For the  given paragraph, the list of bi-grams would be: `[("It's",'official'),('official',"I'm"),("I'm",'a'),('a','financial'),.....]`.
 
-As always, first import the object (in this case: `ngrams`). Then create a list of items to n-gram (in this case: a list of words from the given text). (Remember: for strings, the items are characters. So n-gramming a string will result in a list of n-characters as items.)
+As always, first import the object (in this case: `ngrams`). Then create a list of items to n-gram (in this case: a list of words from the given text). (*Remember: for strings, the items are characters. So n-gramming a string will result in a list of n-characters as items*.)
 
 ```python
 from nltk import ngrams
@@ -79,7 +79,7 @@ bigrams = ngrams(words, 2)
 print(list(bigrams))
 ```
 
-Try n-gramming with `paragraph` instead of `words`. What happens? How can tri-grams be created? Apart from the generic `ngrams` object, NLTK also has objects called `bigrams` and `trigrams` which take only one parameter.
+Try n-gramming with `paragraph` instead of `words`. What happens? How can tri-grams be created? Apart from the generic `ngrams` object, NLTK also has objects called `bigrams` and `trigrams` which take only one parameter, the word list.
 
 Not all words in a text are equally important. Words that are most common in a language and not "essential" to the general meaning of the text are called **stopwords**. There is no standard definition of stopwords and neither is there is standard set of stopwords. Different NLP tools have their own set of stopwords. NLTK contains `stopwords` for different languages.
 
@@ -95,13 +95,13 @@ newwords = [word for word in words if word not in englishstopwords]
 print(newwords)
 ```
 
-Print the count of items in the lists `words` and in `newwords`. Which are words that have been removed?
+Print the count of items in the lists `words` and in `newwords`. Which words have been removed?
 
 You can print the list of stopwords: `print(englishstopwords)`. Do you think more words could be added to the list?
 
 #### Dictionaries in Python
 
-Dictionaries are data structures that consist of elements, each having two components: a key, and a value. The elements are enclosed in curly braces. Elements in a dictionary are separated by commas. An empty pair of curly braces can be used to create an empty dictionary.
+Dictionaries are data structures that consist of elements, each having two components: a key and a value separated by a colon . The elements are enclosed in curly braces. Elements in a dictionary are separated by commas. An empty pair of curly braces can be used to create an empty dictionary.
 
 `dict = {}`
 
@@ -115,19 +115,19 @@ Adding another element to the dictionary is straightforward: `dict['IL'] = 'Illi
 
 <u>Some methods that operate on dictionaries:</u>
 
-> Count of elements in the dictionary: `len(dict)`
->
-> Remove the element with given key: `dict.pop['IL']`
->
-> Clear the entire dictionary: `dict.clear()`
->
-> Get a list of all the values in the dictionary: `dict.values()`
->
-> Get a list o all the keys in the dictionary: `dict.keys()`
->
-> Get a list of tuples of keys and values in the dictionary: `dict.items()`
+- Count of elements in the dictionary: `len(dict)`
 
-Dictionaries are iterable (over keys) using for-loops (the following code prints the key and value for each element):
+- Remove the element with given key: `dict.pop['IL']`
+
+- Clear the entire dictionary: `dict.clear()`
+
+- Get a list of all the values in the dictionary: `dict.values()`
+
+- Get a list o all the keys in the dictionary: `dict.keys()`
+
+- Get a list of tuples of keys and values in the dictionary: `dict.items()`
+
+Dictionaries are iterable (over keys) using for-loops. (*The following code prints the key and value for each element*):
 
 ```python
 dict = {'WI' : 'Wisconsin', 'TX' : 'Texas', 'AZ' : 'Arizona', 'CA' : 'California'}
@@ -141,12 +141,14 @@ The Bible is an interesting piece of literature since it is a collection of book
 
 The first few lines of the file look like this. Notice how each verse is organized. Identify the components of each line (book name, chapter number, verse number, verse text). What is the delimiter used? How do each of the lines end?
 
-> Gen|1|1| In the beginning God created the heaven and the earth.~
-> Gen|1|2| And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.~
+```reStructuredText
+Gen|1|1| In the beginning God created the heaven and the earth.~
+Gen|1|2| And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.~
+```
 
 Our first task is to create a concordance of words in the Bible. The dictionary will have the word as key and a list of verse references as values. Example: `{'crete' : ['Act 27:7', 'Act 27:12', 'Act 27:13', 'Act 27:21', 'Tit 1:5']}`.
 
-First open the file. Then begin reading line by line. Take each line and split it into its components. Create a "verse reference" by combining the book name, chapter number, and verse number. Take the verse text sans the last character. Create a list of the words in the verse, remove stopwords, and convert the words to lowercase. (All keys in our dictionary will be in lowercase). Update the dictionary with words as keys and verse references are values.
+First open the file. Then begin reading one line at a time from the file. Take each line and split it into its components. Create a "verse reference" by combining the book name, chapter number, and verse number. Take the verse text sans the last character. Create a list of the words in the verse, remove stopwords, and convert the words to lowercase. (All keys in our dictionary will be in lowercase). Update the dictionary with words as keys and verse references are values.
 
 While adding verse references check to see whether a reference to the verse already exists for the given word. Duplicate verse references may get added if the given word occurs multiple times in the same verse.
 
@@ -168,7 +170,7 @@ with open('kjvdat.txt', 'r') as infile:
                 concordance[word] = [verse_ref]
 ```
 
-The concordance can be tested by providing a key. `print(concordance['joshua'])`. The above print call will print the verse references for the given key ('joshua'). Try out other keys.
+The concordance can be tested by providing a key: `print(concordance['joshua'])`. This print call will print the verse references for the given key ('joshua'). Try out other keys.
 
 To get the actual text for each of the verse references of the given key we have to create a dictionary with the verse references as keys and the verse texts as values. In fact, this dictionary will be useful if a person wants to get the text of any given verse.
 
@@ -241,9 +243,9 @@ with open('kjvdat.txt', 'r') as infile:
                 tg_concordance[tg] = [verse_ref]   
 ```
 
-Try out searching for two-word keys in the bg_concordance dictionary: `print(bg_concordance('jesus wept'))`. Try out other two-word keys. Search for three-word keys in the tg_concordance dictionary.
+Try searching for two-word keys in the bg_concordance dictionary: `print(bg_concordance('jesus wept'))`. Try out other two-word keys. Search for three-word keys in the tg_concordance dictionary.
 
-Get user input. Count the number of words in the input text. Search in the appropriate concordance and print out the verse references and text for the given search text. If the search text has only one word look for it in the concordance. If it has two words look for it in bg_concordance. If it has three words look for it in tg_concordance. Does it make sense to create a dictionary with four-word keys? Create one if you think it will be useful.
+Write code to get search text from the user. Count the number of words in the input text. Search in the appropriate concordance and print out the verse references and text for the given search text. If the search text has only one word look for it in concordance. If it has two words look for it in bg_concordance. If it has three words look for it in tg_concordance. Does it make sense to create a dictionary with four-word keys? Create one if you think it will be useful.
 
 ```python
 searchkey = input("Enter the text you are searching for: ").lower()
@@ -270,9 +272,9 @@ else:
     print(len(searchkey.split()),"word dictionary does not exist.")
 ```
 
-Since the text of The Bible does not change, the dictionaries created will not change either. Instead of having to re-create the dictionaries each time we need to search for text, we could save the created dictionaries and load them directly when we need to use them. That is where `pickle` comes handy.
+Since the text of The Bible does not change, the dictionaries created will not change either. Instead of having to re-create the dictionaries each time we need to search for text, we could save the created dictionaries and load them directly when we need to use them. That is where `pickle` comes in handy.
 
-The `pickle` module converts a python object into a byte stream that can be written to disk. Unpickling is the inverse operation whereby a byte stream is converted back into an object. These processes are also referred to as serializing and de-serializing. Pickle files are given the filename extension `'.pkl'`. Each dictionary can be saved in a separate pickle file or all the dictionaries could be saved in the same file. 
+The `pickle` module converts a python object into a byte stream that can be written to disk. Unpickling is the inverse operation whereby a byte stream is converted back into an object. These processes are also referred to as serializing and de-serializing. Pickle files are given the filename extension `'.pkl'`. Each dictionary can be saved in a separate pickle file or all the dictionaries could be saved in the same file.  To save the object use `pickle.dump`.
 
 ```python
 import pickle
@@ -325,3 +327,5 @@ else:
 ```
 
 In the next part of this tutorial we will do additional things like identifying word collocations as well as searching for words with similar meanings. The searches should also be filterable by book, or section (Old Testament or New Testament). 
+
+In addition, the library `tkinter` can be used to design a neat GUI for this search application.
