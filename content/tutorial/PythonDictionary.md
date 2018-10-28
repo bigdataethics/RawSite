@@ -2,7 +2,7 @@
 draft = false
 tag = "tutorial"
 description = "Dictionaries in Python"
-title = "Using Dictionaries in Python with Textual Data"
+title = "Dictionaries in Python for Textual Data"
 highlight = true
 css = []
 scripts = []
