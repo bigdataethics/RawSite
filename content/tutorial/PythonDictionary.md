@@ -38,10 +38,11 @@ One of the basic operations to do with text is **tokenizing**. And two kinds of 
 The paragraph shown below is taken from the link: [I tried a #NoSpendChallenge for a month](https://www.bbc.co.uk/bbcthree/article/d0438e75-f9fc-4a85-a5b4-ce3cc040e33d) (*Note: You will want to change the smart quotes to regular quotes*.)
 
 ```python
-paragraph = "It's official: I'm a financial ostrich. Every month, I run \
-out of money and can't work out where it's all gone. When an unexpected bill \
-lands on my door mat (hello, tax return!) I'm hit with a cold panic and, \
-even though I have one, my savings account is empty."
+paragraph = "It's official: I'm a financial ostrich. Every month, \
+I run out of money and can't work out where it's all gone. When an \
+unexpected bill lands on my door mat (hello, tax return!) I'm hit \
+with a cold panic and, even though I have one, my savings account \
+is empty."
 ```
 
 Let's see what sentence tokenizing and word tokenizing do with this paragraph. The tokenize functions are part of the nltk.tokenize section of nltk. Instead of importing the entire nltk we can import just the section or object we want. To import just the tokenize section use `import nltk.tokenize` (or to refer to it with a shortened name use `import nltk.tokenize as nt`). To import just the object use:
