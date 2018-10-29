@@ -16,7 +16,7 @@ Python provides a powerful natural language processing toolkit for handling text
 
 #### Natural Language ToolKit (NLTK)
 
-To **install the NLTK library**, run the following at the system command prompt (terminal window):
+To **install the NLTK library**, run the following at the system command prompt (terminal window): *You will have to change your current directory to the 'Scripts' folder of the 'Python' directory OR you should have the Python folder in the system path variable. (The `pip` command file is in the Scripts folder).*
 
 ```
 pip install nltk
