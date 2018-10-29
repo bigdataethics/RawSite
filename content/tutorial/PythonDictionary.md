@@ -207,6 +207,8 @@ Dictionary keys need not be single words (as in our concordance). It could conta
 
 Initialize two more dictionaries. Create bi-grams and tri-grams from the verse text. Add the bi-grams and tri-grams to the dictionary along with their verse references.
 
+When creating bi-grams the `ngrams` function returns a list of tuples, each tuple having two elements like this: `[('in', 'the'), ('the', 'beginning'), ('beginning', 'God')...]`. However, it would be convenient if the keys in our dictionary were just one string (of two words) rather than a tuple. The two elements of the tuple can be joined using `" ".join()` and putting a space between the two words.
+
 ```python
 from nltk.corpus import stopwords
 from nltk import ngrams
@@ -327,5 +329,7 @@ else:
 ```
 
 In the next part of this tutorial we will do additional things like identifying word collocations as well as searching for words with similar meanings. The searches should also be filterable by book, or section (Old Testament or New Testament). 
+
+While creating dictionaries of bi-grams and tri-grams the keys were strings (of two words or three words). There may be times when retaining the tuples might be more efficient - especially when we want to do word stemming.
 
 In addition, the library `tkinter` can be used to design a neat GUI for this search application.
